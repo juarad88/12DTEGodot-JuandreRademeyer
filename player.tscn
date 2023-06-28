@@ -1,17 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://q0mkfd78lc1u"]
+[gd_scene load_steps=3 format=3 uid="uid://q0mkfd78lc1u"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_t5jeo"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ondpn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mecpn"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_t5jeo")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01185, 0)
-mesh = SubResource("CapsuleMesh_ondpn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01185, 0)
@@ -20,21 +14,20 @@ shape = SubResource("CapsuleShape3D_mecpn")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50329, 0)
 
-[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+[node name="Node3D" type="Node3D" parent="Camera3D"]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0783072, -0.186382)
-light_energy = 3.412
-light_indirect_energy = 1.821
-light_volumetric_fog_energy = 2.231
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.163968, 5.23595)
+light_energy = 4.382
+light_indirect_energy = 1.983
+light_volumetric_fog_energy = 2.245
 light_size = 0.091
-shadow_enabled = true
 shadow_opacity = 0.64
 shadow_blur = 6.656
 distance_fade_enabled = true
-spot_range = 21.411
+spot_range = 36.0734
 spot_attenuation = 5.85634
-spot_angle = 66.5
+spot_angle = 36.5569
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

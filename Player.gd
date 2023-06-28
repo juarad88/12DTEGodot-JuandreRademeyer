@@ -10,7 +10,7 @@ var pages_collected = 0
 @onready var ray = $Camera3D/RayCast3D
 @onready var interaction_notifier = $Control/InteractionNotifier
 @onready var collection_tracker = $Control/MarginContainer/CollectionTracker
-
+#@onready var torch = $Camera3D/Node3D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 20
@@ -26,20 +26,10 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
 	
 
-func check_ray_hit():
-	if ray.is_colliding():
-		if ray.get_collider().is_in_group("Pickup"):
-			interaction_notifier.visible = true
-		if Input.is_action_just_pressed("use"):
-			ray.get_collider().queue_free()
-			pages_collected += 1
-	else:
-		interaction_notifier.visible = false
 		
 
 
 func _physics_process(delta):
-	check_ray_hit()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -47,6 +37,8 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+#	if Input.is_action_just_pressed("torch"):
+#		torch.visible = not torch.visible
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
