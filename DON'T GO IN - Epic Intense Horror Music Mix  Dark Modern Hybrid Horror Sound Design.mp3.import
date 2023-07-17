@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dh42ef8lais4h"
+path="res://.godot/imported/DON'T GO IN - Epic Intense Horror Music Mix  Dark Modern Hybrid Horror Sound Design.mp3-f67c0c8f4fa32232685e4d0f6b5aefc5.mp3str"
+
+[deps]
+
+source_file="res://DON'T GO IN - Epic Intense Horror Music Mix  Dark Modern Hybrid Horror Sound Design.mp3"
+dest_files=["res://.godot/imported/DON'T GO IN - Epic Intense Horror Music Mix  Dark Modern Hybrid Horror Sound Design.mp3-f67c0c8f4fa32232685e4d0f6b5aefc5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
