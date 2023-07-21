@@ -18,10 +18,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50329, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Camera3D/Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.163968, 5.23595)
-light_energy = 4.382
-light_indirect_energy = 1.983
-light_volumetric_fog_energy = 2.245
-light_size = 0.091
+light_energy = 500.0
+light_indirect_energy = 11.68
+light_volumetric_fog_energy = 9.518
+light_size = 0.546
+shadow_enabled = true
 shadow_opacity = 0.64
 shadow_blur = 6.656
 distance_fade_enabled = true
