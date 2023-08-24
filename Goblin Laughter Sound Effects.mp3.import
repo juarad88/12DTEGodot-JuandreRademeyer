@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://nk5exw6svjr7"
+path="res://.godot/imported/Goblin Laughter Sound Effects.mp3-af594c98a2c85ae4d78f8905c34023bd.mp3str"
+
+[deps]
+
+source_file="res://Goblin Laughter Sound Effects.mp3"
+dest_files=["res://.godot/imported/Goblin Laughter Sound Effects.mp3-af594c98a2c85ae4d78f8905c34023bd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

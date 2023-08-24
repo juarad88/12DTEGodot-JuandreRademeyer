@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpglq3uyfyq68"]
+
+[ext_resource type="Script" path="res://story_screen.gd" id="1_rci0x"]
+[ext_resource type="Texture2D" uid="uid://5cc7pc33kstw" path="res://black.webp" id="3_g10m5"]
+[ext_resource type="FontFile" uid="uid://cex0hvafud2ap" path="res://13 Ghosts Full.ttf" id="3_km4h2"]
+[ext_resource type="FontFile" uid="uid://dye0bqk55go5k" path="res://nightchilde.ttf" id="4_ma3fq"]
+[ext_resource type="AudioStream" uid="uid://dl4346macjtf7" path="res://prj_6076237_00d378446c8b4b16ee2b5d29427fac09_1692661591.mp3" id="5_4t3w3"]
+
+[node name="StoryScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_rci0x")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="continue" type="Button" parent="MarginContainer/CenterContainer/CenterContainer/VBoxContainer"]
+z_index = 5
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0745098, 0.145098, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_ma3fq")
+theme_override_font_sizes/font_size = 30
+text = "
+
+
+
+
+
+
+
+Continue"
+flat = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/CenterContainer/HBoxContainer"]
+z_index = -7
+position = Vector2(223.75, 77)
+scale = Vector2(0.40125, 0.477037)
+texture = ExtResource("3_g10m5")
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0745098, 0.145098, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("3_km4h2")
+theme_override_font_sizes/font_size = 15
+text = "Finn recently moved to a country town. 
+Upon arrival, desperate to impress a girl, he claims that 
+he would do any dare. Almost immediately he was dared 
+to spend the night in Ol’ Jacks forest. Not thinking much 
+of it, Finn accepted the challenge, unaware of the rumors 
+that foretell of a monster that lurks within
+
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_4t3w3")
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/CenterContainer/CenterContainer/VBoxContainer/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/CenterContainer/VBoxContainer/continue" to="." method="_on_quit_pressed" flags=18]

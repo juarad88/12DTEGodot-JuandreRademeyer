@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://di2p0qpryfvqb"]
+
+[ext_resource type="Texture2D" uid="uid://c1axyswx0xn4s" path="res://gnomeeeee.jpeg" id="1_wngg1"]
+[ext_resource type="AudioStream" uid="uid://cknytrni7a47f" path="res://onlymp3.to - Scary Scream Sound Effect-J_35qNvyKTs-192k-1692752724.mp3" id="2_pc1g6"]
+
+[node name="Jumpscare" type="Camera3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105, -0.22, -0.66)
+texture = ExtResource("1_wngg1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_pc1g6")
+autoplay = true

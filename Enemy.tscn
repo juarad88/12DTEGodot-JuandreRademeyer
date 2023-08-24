@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwb1dc8s1p8tl"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_brps1"]
+[ext_resource type="Texture2D" uid="uid://bi2iw758qiduw" path="res://gnomeeeee#2.png" id="2_ymw45"]
+[ext_resource type="AudioStream" uid="uid://nk5exw6svjr7" path="res://Goblin Laughter Sound Effects.mp3" id="3_y4pvj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tcqnk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jfghq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_inyym"]
+size = Vector3(32.7079, 1.56185, 32.5994)
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_brps1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_tcqnk")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
+billboard = 1
+shaded = true
+texture = ExtResource("2_ymw45")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Jumpscare" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jumpscare"]
+transform = Transform3D(1.69, 0, 0, 0, 1.69, 0, 0, 0, 1.69, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_jfghq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_inyym")
+
+[node name="EvilLaugh" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_y4pvj")
+volume_db = -2.0
+
+[connection signal="body_entered" from="Jumpscare" to="." method="_on_jumpscare_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

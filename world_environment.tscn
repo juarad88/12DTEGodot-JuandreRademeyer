@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cllg2n7fxsrgo"]
+
+[sub_resource type="Sky" id="Sky_o4l86"]
+
+[sub_resource type="Environment" id="Environment_rxn6q"]
+background_mode = 2
+background_energy_multiplier = 0.3
+sky = SubResource("Sky_o4l86")
+ssr_enabled = true
+glow_enabled = true
+fog_light_energy = 0.66
+volumetric_fog_density = 0.0816
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_rxn6q")

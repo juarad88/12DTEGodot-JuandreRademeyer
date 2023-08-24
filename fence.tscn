@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8jkoy5um7cgb"]
+
+[ext_resource type="PackedScene" uid="uid://c7k2er1ixb387" path="res://Fence.fbx" id="1_uucgc"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.151053, 0.529386, -0.799753)
+
+[node name="Fence" parent="." instance=ExtResource("1_uucgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.324759, 0, 1.63629)
