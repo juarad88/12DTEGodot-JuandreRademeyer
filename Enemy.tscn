@@ -9,7 +9,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jfghq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_inyym"]
-size = Vector3(32.7079, 1.56185, 32.5994)
+size = Vector3(20.7624, 1.56185, 20.653)
 
 [node name="Enemy" type="CharacterBody3D"]
 script = ExtResource("1_brps1")

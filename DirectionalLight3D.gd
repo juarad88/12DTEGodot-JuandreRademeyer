@@ -17,8 +17,7 @@ func _process(delta):
 		if light_angular_distance > 90:
 			
 			light_angular_distance = 180
-			print("Balls")
-			get_tree().quit()
+			get_tree().change_scene_to_file("res://end_screen.tscn")
 			
 
 

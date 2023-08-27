@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8nbbcobh2o33"]
+[gd_scene load_steps=6 format=3 uid="uid://b8nbbcobh2o33"]
 
 [ext_resource type="Script" path="res://title_screen.gd" id="1_sfm2h"]
-[ext_resource type="Texture2D" uid="uid://b23uha5l1ypwp" path="res://Gnome game.png" id="2_0otar"]
+[ext_resource type="Texture2D" uid="uid://5cc7pc33kstw" path="res://black.webp" id="2_galry"]
 [ext_resource type="FontFile" uid="uid://cex0hvafud2ap" path="res://13 Ghosts Full.ttf" id="3_otxii"]
 [ext_resource type="FontFile" uid="uid://dye0bqk55go5k" path="res://nightchilde.ttf" id="4_bntq5"]
+[ext_resource type="AudioStream" uid="uid://dabmxrgbg2n7q" path="res://ElevenLabs_2023-08-27T21_23_21_Glinda.mp3" id="5_hbo8i"]
 
 [node name="End screen" type="Control"]
 layout_mode = 3
@@ -31,7 +32,7 @@ layout_mode = 2
 [node name="Sprite2D" type="Sprite2D" parent="MarginContainer/CenterContainer/HBoxContainer"]
 position = Vector2(446, 78)
 scale = Vector2(1.28, 1.8)
-texture = ExtResource("2_0otar")
+texture = ExtResource("2_galry")
 
 [node name="Label" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer"]
 layout_mode = 2
@@ -40,9 +41,8 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("3_otxii")
-theme_override_font_sizes/font_size = 80
-text = " Forgotten Thicket 
-Night of the Gnome"
+theme_override_font_sizes/font_size = 15
+text = "You survived the night"
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/CenterContainer/HBoxContainer"]
 layout_mode = 2
@@ -50,35 +50,18 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer/CenterContainer"]
 layout_mode = 2
 
-[node name="Start" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.913725, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("4_bntq5")
-theme_override_font_sizes/font_size = 30
-text = "Start"
-flat = true
-
-[node name="Options" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.0745098, 0.145098, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("4_bntq5")
-theme_override_font_sizes/font_size = 30
-text = "Options"
-flat = true
-
 [node name="Quit" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.0745098, 0.145098, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_bntq5")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 15
 text = "Quit"
 flat = true
 
-[connection signal="pressed" from="MarginContainer/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed" flags=18]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_hbo8i")
+autoplay = true
+
 [connection signal="pressed" from="MarginContainer/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed" flags=18]
